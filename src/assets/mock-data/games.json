@@ -1,23 +1,23 @@
 [
     {
         "id": "1",
-        "name": "clans something",
+        "name": "Overload",
         "owner": "mehmet@mehmet.com",
         "bundle": "bundle1",
-        "iconUrl": "/assets/sdsdsd"
+        "iconUrl": "assets/photos/overload.png"
     },
     {
         "id": "2",
-        "name": "clans2 something",
+        "name": "Zynga",
         "owner": "mehmet@mehmet.com",
         "bundle": "bundle3",
-        "iconUrl": "/assets/sdsdsd"
+        "iconUrl": "assets/photos/zynga.jpeg"
     },
     {
         "id": "3",
-        "name": "clans3 something",
+        "name": "Crowd Evolution",
         "owner": "mehmet@mehmet.com",
         "bundle": "bundle3",
-        "iconUrl": "/assets/sdsdsd"
+        "iconUrl": "assets/photos/evolution.jpg"
     }
 ]

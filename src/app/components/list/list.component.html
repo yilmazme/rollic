@@ -1,7 +1,9 @@
-<p style="color: black; text-align:center">list works!</p>
-<p style="color: black; text-align:center">list works!</p>
-<p style="color: black; text-align:center">list works!</p>
-<p style="color: black; text-align:center">list works!</p>
-<p style="color: black; text-align:center">list works!</p>
+<div class="games-container">
+    <div class="each-game" *ngFor="let game of games">
+        <h3>{{game.name}}</h3>
+        <img src="{{game.iconUrl}}" alt="{{game.iconUrl}}" width="300" height="400" />
+        <button (click)="deleteGame(game.id)">Delete</button>
+    </div>
+</div>
 
 <button (click)="goCreatePage()">new game</button>

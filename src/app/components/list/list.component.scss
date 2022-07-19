@@ -1,0 +1,6 @@
+@import "src/styles/variables";
+@import "src/styles/mixins";
+
+.games-container{
+    @include flex(row, space-evenly, center)
+}

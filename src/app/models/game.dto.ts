@@ -1,5 +1,5 @@
 export default interface Game {
-  id?: string;
+  id: string;
   name: string;
   owner: string;
   bundle: string;

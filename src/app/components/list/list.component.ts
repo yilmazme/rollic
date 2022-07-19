@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { first } from 'rxjs';
 import Game from 'src/app/models/game.dto';
+import AlertService from 'src/app/services/alert.service';
 import { GameService } from 'src/app/services/game.service';
 
 @Component({
@@ -26,6 +27,29 @@ export class ListComponent implements OnInit {
       });
   }
 
+  deleteGame(id: string) {
+    AlertService.Alert(
+      'Delete this game?',
+      'Are you sure you want to delete this game?',
+      'warning',
+      true,
+      true,
+      'Yes, delete',
+      'No, take me back'
+    ).then((result) => {
+      if (result.isConfirmed) {
+        this.gameService
+          .deleteGame(id)
+          .pipe(first())
+          .subscribe({
+            next: (res) => {
+              this.games = res;
+            },
+            error: (err) => console.log(err),
+          });
+      }
+    });
+  }
   goCreatePage() {
     this.router.navigate(['/create']);
   }
