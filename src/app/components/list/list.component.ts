@@ -12,6 +12,7 @@ import { GameService } from 'src/app/services/game.service';
 })
 export class ListComponent implements OnInit {
   games: Game[];
+  filteredGames: Game[];
   searchText: string = '';
 
   constructor(private router: Router, private gameService: GameService) {}
@@ -23,6 +24,7 @@ export class ListComponent implements OnInit {
       .subscribe({
         next: (res) => {
           this.games = res;
+          this.filteredGames = res;
           console.log(this.games);
         },
         error: (err) => console.log(err),
@@ -46,6 +48,9 @@ export class ListComponent implements OnInit {
           .subscribe({
             next: (res) => {
               this.games = res;
+              this.filteredGames = this.games.filter((game) =>
+                game.name.toLowerCase().includes(this.searchText)
+              );
             },
             error: (err) => console.log(err),
           });
@@ -54,5 +59,14 @@ export class ListComponent implements OnInit {
   }
   goCreatePage() {
     this.router.navigate(['/create']);
+  }
+
+  search(value: string) {
+    console.log(value);
+    this.searchText = value.toLowerCase();
+
+    this.filteredGames = this.games.filter((game) =>
+      game.name.toLowerCase().includes(this.searchText)
+    );
   }
 }

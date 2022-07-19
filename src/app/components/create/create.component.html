@@ -1,58 +1,48 @@
-<form [formGroup]="gameForm" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-        <label for="name">Name
-            <span *ngIf="f['name'].invalid" class="fa-required-icon" tooltip="Required with min 2 characters"
-                placement="right">
-                <i class="fas fa-asterisk"></i>
-            </span>
-        </label>
-        <input type="text" formControlName="name" class="form-control"
-            [ngClass]="{ 'is-invalid': submitted && f['name'].errors }" placeholder="" />
-        <div *ngIf="submitted && f['name'].errors" class="invalid-feedback">
-            <div *ngIf="f['name'].errors['required']"> name is required</div>
-            <div *ngIf="f['name'].errors['minlength']">at least two characters</div>
-        </div>
+<div class="form-container">
+    <div class="header">
+        <h2>New Game</h2>
     </div>
-    <div class="form-group">
-        <label for="owner">owner
-            <span *ngIf="f['owner'].invalid" class="fa-required-icon" tooltip="Required with min 2 characters"
-                placement="right">
-                <i class="fas fa-asterisk"></i>
-            </span>
-        </label>
-        <input type="text" formControlName="owner" class="form-control"
-            [ngClass]="{ 'is-invalid': submitted && f['owner'].errors }" placeholder="" />
-        <div *ngIf="submitted && f['owner'].errors" class="invalid-feedback">
-            <div *ngIf="f['owner'].errors['required']">owner mail is required</div>
-            <div *ngIf="f['owner'].errors['pattern']">please add a valid email</div>
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="bundle">bundle
-            <span *ngIf="f['bundle'].invalid" class="fa-required-icon" tooltip="Required with min 2 characters"
-                placement="right">
-                <i class="fas fa-asterisk"></i>
-            </span>
-        </label>
-        <input type="text" formControlName="bundle" class="form-control"
-            [ngClass]="{ 'is-invalid': submitted && f['bundle'].errors }" placeholder="" />
-        <div *ngIf="submitted && f['bundle'].errors" class="invalid-feedback">
-            <div *ngIf="f['bundle'].errors['required']">bundle is required</div>
-            <div *ngIf="f['bundle'].errors['pattern']">please add a valid bundle</div>
+    <form [formGroup]="gameForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <input type="text" formControlName="name" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f['name'].errors }" placeholder="Game name" />
+            <div *ngIf="submitted && f['name'].errors" class="invalid-feedback">
+                <div *ngIf="f['name'].errors['required']"> name is required</div>
+                <div *ngIf="f['name'].errors['minlength']">at least two characters</div>
+            </div>
         </div>
         <div class="form-group">
 
-            <input formControlName="iconUrl" #imageInput id="upload" type="file" accept="image/*"
-                (change)="processFile(imageInput)" />
+            <input type="text" formControlName="bundle" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f['bundle'].errors }" placeholder="Bundle" />
+            <div *ngIf="submitted && f['bundle'].errors" class="invalid-feedback">
+                <div *ngIf="f['bundle'].errors['required']">bundle is required</div>
+                <div *ngIf="f['bundle'].errors['pattern']">please add a valid bundle</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="text" formControlName="owner" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f['owner'].errors }" placeholder="" placeholder="Owner" />
+            <div *ngIf="submitted && f['owner'].errors" class="invalid-feedback">
+                <div *ngIf="f['owner'].errors['required']">owner mail is required</div>
+                <div *ngIf="f['owner'].errors['pattern']">please add a valid email</div>
+            </div>
+        </div>
+        <div class="file-group">
+            <div (click)="imageInput.click()" class="image-upload">
+                <span>Choose Image <i class="fas fa-photo-video"></i></span>
+            </div>
             <div *ngIf="submitted && f['iconUrl'].errors" class="invalid-feedback">
                 <div *ngIf="f['iconUrl'].errors['required']">image is required</div>
             </div>
+
         </div>
-    </div>
-    <div class="button-group">
-        <!-- <button type="submit" [disabled]="loading || gameForm.invalid">Submit</button> -->
-        <button type="submit">Submit</button>
-        <button type="button" (click)="resetForm()">Reset</button>
-    </div>
-</form>
-<button (click)="goListPage()">go back</button>
+        <div class="button-group">
+            <!-- <button type="submit" [disabled]="loading || gameForm.invalid">Submit</button> -->
+            <button type="submit">Save</button>
+            <button type="button" (click)="resetForm()">Reset</button>
+        </div>
+        <input formControlName="iconUrl" #imageInput id="upload" type="file" accept="image/*"
+            (change)="processFile(imageInput)" style="visibility: hidden;" />
+    </form>
+</div>

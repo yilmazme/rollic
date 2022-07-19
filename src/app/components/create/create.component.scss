@@ -1,0 +1,84 @@
+@import "src/styles/variables";
+@import "src/styles/mixins";
+
+
+.form-container{
+    width: 30%;
+
+    margin: auto;
+    padding-top: 4rem;
+    .header{
+        @include flex(row, space-between, center)
+    }
+form{
+width: 100%;
+margin-top: 2rem;
+.form-group{
+    width: 100%;
+    margin-bottom: 1rem;
+    input {
+        outline: none;
+        box-shadow: none;
+        height: 2.5rem;
+        color: $black;
+        width: 100%;
+    }
+    .is-invalid{
+        border: 1px solid $red;
+    }
+
+    .invalid-feedback{
+        color: $red;
+    }
+}
+.file-group{
+    input{
+        border: none;
+        margin-top: 1rem;
+    }
+    .is-invalid{
+        border: 1px solid $red;
+    }
+
+    .invalid-feedback{
+        color: $red;
+    }
+
+    .image-upload{
+        background-color: $blue;
+        width: fit-content;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        border-radius: 3px;
+        color: $white;
+
+        &:hover{
+            border-radius: 6px;
+            transition-duration: 300ms
+        }
+    }
+}
+
+.button-group {
+    @include flex(row, space-between, center);
+    width: 100%;
+    margin: auto;
+
+    button {
+        @include formButton;
+        width: 6rem;
+        background-color: $darkGreen;
+        color: $white;
+        border: none;
+        border-radius: 1.25rem;
+        padding: 0.8rem;
+        font-size: 16px;
+        margin: 1rem 0;
+
+        &:nth-child(2) {
+            background-color: $blue;
+        }
+    }
+}
+}
+}

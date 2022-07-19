@@ -7,10 +7,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListComponent } from './components/list/list.component';
 import { CreateComponent } from './components/create/create.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-import { GameCardComponent } from './components/game-card/game-card.component';
 
 @NgModule({
-  declarations: [AppComponent, ListComponent, CreateComponent, GameCardComponent],
+  declarations: [AppComponent, ListComponent, CreateComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
