@@ -12,6 +12,8 @@ import { GameService } from 'src/app/services/game.service';
 })
 export class ListComponent implements OnInit {
   games: Game[];
+  searchText: string = '';
+
   constructor(private router: Router, private gameService: GameService) {}
 
   ngOnInit(): void {

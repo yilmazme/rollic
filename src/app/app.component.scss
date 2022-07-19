@@ -1,0 +1,19 @@
+@import "src/styles/variables";
+@import "src/styles/mixins";
+
+.layout{
+    @include fullContainer;
+    background-color: $white;
+
+    .navbar{
+        background-color: $rollicBlue;
+        height: 4rem;
+        @include flex(row, flex-start, center);
+
+        p{
+            color: white;
+            font-size: 1.65rem;
+            margin-left: 1rem;
+        }
+    }
+}

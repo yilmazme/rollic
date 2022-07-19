@@ -1,9 +1,28 @@
-<div class="games-container">
-    <div class="each-game" *ngFor="let game of games">
-        <h3>{{game.name}}</h3>
-        <img src="{{game.iconUrl}}" alt="{{game.iconUrl}}" width="300" height="400" />
-        <button (click)="deleteGame(game.id)">Delete</button>
+<div class="container">
+    <div class="header">
+        <h2>Game List</h2>
+    </div>
+    <div class="filter">
+        <div class="search">
+            <i class="fas fa-search"></i>
+            <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off"
+                placeholder="Start searching for a game">
+        </div>
+
+        <button (click)="goCreatePage()">new game</button>
+    </div>
+    <div class="games-container">
+        <ng-template #gamesTemplate>
+
+            <div class="each-game" *ngFor="let game of games | filter:searchText">
+                <h3>{{game.name}}</h3>
+                <img src="{{game.iconUrl}}" alt="{{game.iconUrl}}" width="300" height="400" />
+                <button (click)="deleteGame(game.id)"><i class="fas fa-times-circle fa-lg"></i></button>
+
+            </div>
+        </ng-template>
+        <ng-container *ngIf="games">
+            <p>no game found</p>
+        </ng-container>
     </div>
 </div>
-
-<button (click)="goCreatePage()">new game</button>
