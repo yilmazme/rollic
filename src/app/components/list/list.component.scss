@@ -53,7 +53,7 @@
 
         .each-game {
             position: relative;
-            margin: 0 1rem;
+            margin: 1rem 1rem;
 
             h3 {
                 margin: 0.7rem 0;
@@ -74,13 +74,14 @@
             }
         }
 
-        .no-result {
-            margin-top: 3rem;
+    }
+    .no-result {
+        margin-top: 3rem;
+        text-align: center;
 
-            p {
-                color: $rollicBlue;
-                font-size: 1.2rem;
-            }
+        p {
+            color: $rollicBlue;
+            font-size: 1.2rem;
         }
     }
 }

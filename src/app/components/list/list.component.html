@@ -16,8 +16,8 @@
             <img src="{{game.iconUrl}}" alt="{{game.iconUrl}}" width="300" height="400" />
             <button (click)="deleteGame(game.id)"><i class="fas fa-times-circle fa-lg"></i></button>
         </div>
-        <div class="no-result" *ngIf="!filteredGames.length">
-            <p>no records found</p>
-        </div>
+    </div>
+    <div class="no-result" *ngIf="!filteredGames.length">
+        <p>no records found</p>
     </div>
 </div>
