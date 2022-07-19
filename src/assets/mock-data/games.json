@@ -3,21 +3,42 @@
         "id": "1",
         "name": "Overload",
         "owner": "mehmet@mehmet.com",
-        "bundle": "bundle1",
+        "bundle": "bundle1.bundle",
         "iconUrl": "assets/photos/overload.png"
     },
     {
         "id": "2",
         "name": "Zynga",
         "owner": "mehmet@mehmet.com",
-        "bundle": "bundle3",
+        "bundle": "bundle2.bundle",
         "iconUrl": "assets/photos/zynga.jpeg"
     },
     {
         "id": "3",
         "name": "Crowd Evolution",
         "owner": "mehmet@mehmet.com",
-        "bundle": "bundle3",
+        "bundle": "bundle3.bundle",
         "iconUrl": "assets/photos/evolution.jpg"
+    },
+    {
+        "id": "4",
+        "name": "Sword Maker",
+        "owner": "mehmet@mehmet.com",
+        "bundle": "bundle4.bundle",
+        "iconUrl": "assets/photos/sword.jpg"
+    },
+    {
+        "id": "5",
+        "name": "Couple Shuffle",
+        "owner": "mehmet@mehmet.com",
+        "bundle": "bundle5.bundle",
+        "iconUrl": "assets/photos/couple.png"
+    },
+    {
+        "id": "6",
+        "name": "Candle Gift",
+        "owner": "mehmet@mehmet.com",
+        "bundle": "bundle6.bundle",
+        "iconUrl": "assets/photos/candle.jpg"
     }
 ]

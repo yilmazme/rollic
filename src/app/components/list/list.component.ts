@@ -25,7 +25,6 @@ export class ListComponent implements OnInit {
         next: (res) => {
           this.games = res;
           this.filteredGames = res;
-          console.log(this.games);
         },
         error: (err) => console.log(err),
       });
@@ -62,7 +61,6 @@ export class ListComponent implements OnInit {
   }
 
   search(value: string) {
-    console.log(value);
     this.searchText = value.toLowerCase();
 
     this.filteredGames = this.games.filter((game) =>

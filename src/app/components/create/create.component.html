@@ -32,6 +32,7 @@
             <div (click)="imageInput.click()" class="image-upload">
                 <span>Choose Image <i class="fas fa-photo-video"></i></span>
             </div>
+            <span *ngIf="fileName">You are uploading: <span style="color:#1b65a7">{{fileName}}</span></span>
             <div *ngIf="submitted && f['iconUrl'].errors" class="invalid-feedback">
                 <div *ngIf="f['iconUrl'].errors['required']">image is required</div>
             </div>

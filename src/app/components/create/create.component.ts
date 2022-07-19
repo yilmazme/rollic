@@ -30,6 +30,8 @@ export class CreateComponent implements OnInit {
   uploadFile: UploadImage;
   selectedFile: UploadImage;
 
+  fileName: string;
+
   constructor(
     private router: Router,
     private gameService: GameService,
@@ -80,7 +82,6 @@ export class CreateComponent implements OnInit {
       bundle: this.gameForm.get('bundle')?.value,
       iconUrl: this.uploadFile.src,
     };
-    console.log(newGame);
     this.gameService
       .addGame(newGame)
       .pipe(first())
@@ -94,6 +95,7 @@ export class CreateComponent implements OnInit {
             this.gameForm.reset();
             this.submitted = false;
             this.loading = false;
+            this.fileName = '';
             this.router.navigate(['/games']);
           });
         },
@@ -112,7 +114,7 @@ export class CreateComponent implements OnInit {
     });
 
     reader.readAsDataURL(file);
-    console.log(this.uploadFile);
+    this.fileName = imageInput.files[0].name;
   }
 
   resetForm() {
