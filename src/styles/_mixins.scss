@@ -1,0 +1,31 @@
+@mixin flex($direction, $justify, $align) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin centerSelf {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin fullContainer {
+    width: 100vw;
+    min-height: 100vh;
+}
+
+@mixin formButton{
+    cursor: pointer;
+    &:hover {
+        padding: 0.7rem;
+        transition-duration: 200ms;
+      }
+    
+      &:disabled {
+        opacity: 0.4;
+        box-shadow: 1px 2px gray;
+      }
+}

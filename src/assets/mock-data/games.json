@@ -1,0 +1,23 @@
+[
+    {
+        "id": "1",
+        "name": "clans something",
+        "owner": "mehmet@mehmet.com",
+        "bundle": "bundle1",
+        "iconUrl": "/assets/sdsdsd"
+    },
+    {
+        "id": "2",
+        "name": "clans2 something",
+        "owner": "mehmet@mehmet.com",
+        "bundle": "bundle3",
+        "iconUrl": "/assets/sdsdsd"
+    },
+    {
+        "id": "3",
+        "name": "clans3 something",
+        "owner": "mehmet@mehmet.com",
+        "bundle": "bundle3",
+        "iconUrl": "/assets/sdsdsd"
+    }
+]
