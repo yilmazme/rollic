@@ -4,14 +4,16 @@
 .layout {
     @include fullContainer;
     background-color: $white;
+    position: relative;
 
     .navbar {
         background-color: $rollicBlue;
         height: 4rem;
         @include flex(row, flex-start, center);
+        position: -webkit-sticky; 
         position: sticky;
         top: 0;
-        z-index: 2;
+        z-index: 3;
 
         a {
             color: white;

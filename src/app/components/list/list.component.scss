@@ -63,9 +63,10 @@
                 border: none;
                 color: $black;
                 position: absolute;
-                top: 2rem;
-                cursor: pointer;
+                top: 2.5rem;
                 right: -1rem;
+                cursor: pointer;
+                z-index: 2;
 
                 &:hover {
                     color: red;
@@ -148,8 +149,8 @@
                     border: none;
                     color: $black;
                     position: absolute;
-                    top: 2rem;
                     cursor: pointer;
+                    top: 2.5rem;
                     right: -1rem;
 
                     &:hover {
